@@ -7,6 +7,8 @@ Sections: Added, Changed, Fixed, Security, Removed, Deprecated.
 
 ### Fixed
 - Removed the Starlette TestClient warning filter (T-007): the official SDK brings `httpx2`, so tests run with warnings as errors and no exceptions.
+- CI `web`: pnpm 12 fails on unapproved build scripts in CI; esbuild's build is now approved in `apps/web/pnpm-workspace.yaml`.
+- CI `secrets`: `.gitleaks.toml` keeps default rules and allowlists only the fake secret-shaped redaction-test fixtures.
 
 ### Added
 - T-602 local model: `LocalProvider` for OpenAI-compatible local servers (Ollama, llama.cpp, vLLM, LM Studio) and `build_provider()` that enforces the `local-only` policy in code (no Claude provider, internal hosts only). New settings `LOCAL_MODEL_URL`, `LOCAL_MODEL_NAME`.
